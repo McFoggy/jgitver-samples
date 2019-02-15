@@ -16,7 +16,7 @@ this will start both a nexus OSS server and a container with our maven project.
 
 #### Nexus
 
-As the nexus server can take several minutes to start you can monitor it's startup by running `docker logs -f nexus-oss_nexus-oss_1`.
+As the nexus server can take several minutes to start you can monitor it's startup by running `docker logs -f nexus2-oss_nexus_1`.
 
 At some point in time you should see something like:
 
@@ -34,7 +34,7 @@ You can access it from your host by going to http://localhost:8181/nexus.
 We have also started a container with a preconfigured maven project and maven settings able to deploy to the nexus server.
 
 - connect to the container:  
-`docker exec -it -w /opt/projects/maven-jgitver-nexus nexus-oss_maven_1 /bin/bash`
+`docker exec -it -w /opt/projects/maven-jgitver-nexus nexus2-oss_maven_1 /bin/bash`
 - initialize some git history  
 `./init-git-history.sh`
 - you should see some commands results for which:
@@ -51,10 +51,10 @@ We have also started a container with a preconfigured maven project and maven se
   ...
   [INFO] --- maven-deploy-plugin:2.7:deploy (default-deploy) @ jgitver-nexus-sample ---
   ...
-  Uploading to nexus: http://nexus-oss:8081/nexus/content/repositories/snapshots/fr/brouillard/oss/jgitver-nexus-sample/0.0.2-SNAPSHOT/maven-metadata.xml
-  Uploaded to nexus: http://nexus-oss:8081/nexus/content/repositories/snapshots/fr/brouillard/oss/jgitver-nexus-sample/0.0.2-SNAPSHOT/maven-metadata.xml (614 B at 11 kB/s)
-  Uploading to nexus: http://nexus-oss:8081/nexus/content/repositories/snapshots/fr/brouillard/oss/jgitver-nexus-sample/maven-metadata.xml
-  Uploaded to nexus: http://nexus-oss:8081/nexus/content/repositories/snapshots/fr/brouillard/oss/jgitver-nexus-sample/maven-metadata.xml (297 B at 6.8 kB/s)
+  Uploading to nexus: http://nexus:8081/nexus/content/repositories/snapshots/fr/brouillard/oss/jgitver-nexus-sample/0.0.2-SNAPSHOT/maven-metadata.xml
+  Uploaded to nexus: http://nexus:8081/nexus/content/repositories/snapshots/fr/brouillard/oss/jgitver-nexus-sample/0.0.2-SNAPSHOT/maven-metadata.xml (614 B at 11 kB/s)
+  Uploading to nexus: http://nexus:8081/nexus/content/repositories/snapshots/fr/brouillard/oss/jgitver-nexus-sample/maven-metadata.xml
+  Uploaded to nexus: http://nexus:8081/nexus/content/repositories/snapshots/fr/brouillard/oss/jgitver-nexus-sample/maven-metadata.xml (297 B at 6.8 kB/s)
   [INFO] ------------------------------------------------------------------------
   [INFO] BUILD SUCCESS
   [INFO] ------------------------------------------------------------------------
@@ -66,8 +66,8 @@ We have also started a container with a preconfigured maven project and maven se
   ```
   ...
   [INFO] --- maven-deploy-plugin:2.7:deploy (default-deploy) @ jgitver-nexus-sample ---
-  Uploading to nexus: http://nexus-oss:8081/nexus/content/repositories/releases/fr/brouillard/oss/jgitver-nexus-sample/1.0.0/jgitver-nexus-sample-1.0.0.pom
-  Uploaded to nexus: http://nexus-oss:8081/nexus/content/repositories/releases/fr/brouillard/oss/jgitver-nexus-sample/1.0.0/jgitver-nexus-sample-1.0.0.pom (1.2 kB at 9.3 kB/s)
+  Uploading to nexus: http://nexus:8081/nexus/content/repositories/releases/fr/brouillard/oss/jgitver-nexus-sample/1.0.0/jgitver-nexus-sample-1.0.0.pom
+  Uploaded to nexus: http://nexus:8081/nexus/content/repositories/releases/fr/brouillard/oss/jgitver-nexus-sample/1.0.0/jgitver-nexus-sample-1.0.0.pom (1.2 kB at 9.3 kB/s)
   ...
   [INFO] ------------------------------------------------------------------------
   [INFO] BUILD SUCCESS

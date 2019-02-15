@@ -6,7 +6,7 @@ services:
       - ./maven-project:/opt/projects/maven-jgitver-nexus
       - ./nexus-settings.xml:/root/.m2/settings.xml
     command: ["tail", "-f", "/dev/null"]
-  nexus-oss:
+  nexus:
     image: "sonatype/nexus:oss"
     ports:
       - "8181:8081"
