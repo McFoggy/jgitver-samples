@@ -4,19 +4,19 @@
 
     <parent>
         <groupId>com.example.framework</groupId>
-        <artifactId>framework-parent</artifactId>
-        <version>0</version>
+        <artifactId>framework-microservice-parent</artifactId>
+        <version>0</version>    <!-- using framework version F -->
     </parent>
 
     <groupId>com.example.application</groupId>
     <artifactId>microservice</artifactId>
-    <version>1</version>
+    <version>1</version>        <!-- but microservice application will have its own version M -->
     <packaging>jar</packaging>
 
     <dependencies>
         <dependency>
             <groupId>com.example.framework</groupId>
-            <artifactId>framework-lib</artifactId>
+            <artifactId>framework-lib</artifactId>      <!-- expected always to be framework version F -->
         </dependency>
     </dependencies>
 </project>

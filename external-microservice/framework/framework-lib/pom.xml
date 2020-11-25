@@ -4,9 +4,8 @@
 
     <parent>
         <groupId>com.example.framework</groupId>
-        <artifactId>framework-parent</artifactId>
+        <artifactId>framework-agg</artifactId>
         <version>0</version>
-        <relativePath>../framework-parent</relativePath>
     </parent>
 
     <artifactId>framework-lib</artifactId>

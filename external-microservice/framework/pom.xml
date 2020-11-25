@@ -2,13 +2,21 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-<groupId>com.example.framework</groupId>
-<artifactId>framework-agg</artifactId>
-<version>0</version>
-<packaging>pom</packaging>
+    <groupId>com.example.framework</groupId>
+    <artifactId>framework-agg</artifactId>
+    <version>0</version>
+    <packaging>pom</packaging>
 
-<modules>
-    <module>framework-parent</module>
-    <module>framework-lib</module>
-</modules>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>11</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+    </properties>
+
+    <modules>
+        <module>framework-lib</module>
+        <module>framework-microservice-parent</module>
+    </modules>
+
 </project>
