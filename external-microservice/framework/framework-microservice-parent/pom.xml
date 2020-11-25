@@ -1,0 +1,38 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.example.framework</groupId>
+        <artifactId>framework-agg</artifactId>
+        <version>0</version>
+    </parent>
+
+    <artifactId>framework-microservice-parent</artifactId>
+    <packaging>pom</packaging>
+    <description>A parent for the microservices developed under this framework.</description>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.example.framework</groupId>
+                <artifactId>framework-lib</artifactId>
+                <!--
+                 |   Using ${project.version} here will not work, as when microservice project is being built, the value
+                 |   resolves to `1` (which is the microservice version), instead of `0` (which is the framework one).
+                 |
+                 |   Using ${project.parent.version} will work instead, but ONLY as long as, microservice does not
+                 |   define its own parent proxying this one (which would have a diff version). So looks like a fragile
+                 |   workaround.
+                 |
+                 |   This is not related to JGitVer, but Maven itself. But could be a use case to integrate everything
+                 |   together :)
+                 |   * Is there any way to solve this use-case in Maven? Maybe doing something different?
+                 |-->
+                <!-- <version>${project.version}</version> -->
+                <version>${project.parent.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>
